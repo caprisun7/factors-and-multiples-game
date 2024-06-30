@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/factors-and-multiples-game/static/css/main.a94afe56.css",
+    "main.css": "/factors-and-multiples-game/static/css/main.c47773c6.css",
     "main.js": "/factors-and-multiples-game/static/js/main.a05f7395.js",
     "static/js/453.5c3337cf.chunk.js": "/factors-and-multiples-game/static/js/453.5c3337cf.chunk.js",
     "index.html": "/factors-and-multiples-game/index.html",
-    "main.a94afe56.css.map": "/factors-and-multiples-game/static/css/main.a94afe56.css.map",
+    "main.c47773c6.css.map": "/factors-and-multiples-game/static/css/main.c47773c6.css.map",
     "main.a05f7395.js.map": "/factors-and-multiples-game/static/js/main.a05f7395.js.map",
     "453.5c3337cf.chunk.js.map": "/factors-and-multiples-game/static/js/453.5c3337cf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a94afe56.css",
+    "static/css/main.c47773c6.css",
     "static/js/main.a05f7395.js"
   ]
 }
