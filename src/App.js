@@ -65,9 +65,44 @@ const FactorsAndMultiplesGame = () => {
       }
     }
 
-    return bestMoves[Math.floor(Math.random() * bestMoves.length)];
+    if (bestMoves.length > 1) {
+      let bestMoveValues = [];
+      let maxAIOptions = -Infinity;
+  
+      for (let move of bestMoves) {
+        let minAIOptions = Infinity;
+        
+        // Simulate opponent's best moves
+        const opponentValidMoves = getValidMoves(
+          numbers.map(n => n.value === move ? { ...n, crossed: true } : n),
+          move
+        );
+  
+        for (let opponentMove of opponentValidMoves) {
+          // Count AI's options after opponent's best move
+          const aiOptions = countOpponentMoves(
+            numbers.map(n => (n.value === move || n.value === opponentMove.value) ? { ...n, crossed: true } : n),
+            opponentMove.value
+          );
+          minAIOptions = Math.min(minAIOptions, aiOptions);
+        }
+  
+        // Update best moves if this move is better
+        if (minAIOptions > maxAIOptions) {
+          maxAIOptions = minAIOptions;
+          bestMoveValues = [move];
+        } else if (minAIOptions === maxAIOptions) {
+          bestMoveValues.push(move);
+        }
+      }
+  
+      // Randomly select from the best moves
+      return bestMoveValues[Math.floor(Math.random() * bestMoveValues.length)];
+    }
+  
+    // If there's only one best move, return it
+    return bestMoves[0];
   };
-
   const handleAIMove = () => {
     setIsAIThinking(true);
     setTimeout(() => {
